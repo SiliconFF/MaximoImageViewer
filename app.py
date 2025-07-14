@@ -7,7 +7,9 @@ import time
 
 DEBUG_ENABLED = False
 
-credentials_file = json.loads('./creds.json')
+with open('creds.json', 'r') as file:
+    credentials_file = json.load(file)
+
 API_BASE_URL = credentials_file['mvi-endpoint']
 AUTH_TOKEN = credentials_file['mvi-key']
 
